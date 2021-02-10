@@ -241,9 +241,12 @@ export const NavBar = styled.div`
 `;
 
 export const Bars = styled.div`
+  opacity: 0;
   display: none;
   cursor: pointer;
   font-size: 28px;
+  animation: ${fadeInRight} 0.5s linear forwards;
+  animation-delay: 2s;
   color: ${(props) => {
     return !props.navbar ? "#000" : "#fff";
   }};
