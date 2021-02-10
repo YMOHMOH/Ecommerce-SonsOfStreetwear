@@ -1,24 +1,121 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from "axios";
+import "./App.css";
+
+import HomeScreen from "./Containers/HomeScreen";
+import ContactScreen from "./Containers/ContactScreen";
+import ProductsScreen from "./Containers/ProductsScreen";
+import CartScreen from "./Containers/CartScreen";
+
+import Header from "./Components/Header";
+import Social from "./Components/Social";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faMapMarker,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faMapMarker, faPhone, faEnvelope);
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://api-sonsofstreetwear.herokuapp.com/v1/products/`
+        );
+        const newProducts = [...response.data.products];
+        const newProductsLength = response.data.products.length;
+        for (let i = 0; i < newProductsLength; i++) {
+          const obj = { ...newProducts[i] };
+          obj.inCart = false;
+          newProducts[i] = obj;
+        }
+        setProducts(newProducts);
+        setIsLoading(false);
+        console.log(newProducts);
+      } catch (error) {
+        console.log(error);
+        // if (error.response.data.error === "User doesn't exist") {
+        //   setErrorMessage(
+        //     "L'utilisateur n'existe pas, Veuillez vous reconnecter"
+        //   );
+        //   alert("L'utilisateur n'existe pas, Veuillez vous reconnecter");
+        // } else if (error.response.data.error === "Unauthorized") {
+        //   setErrorMessage(
+        //     "L'utilisateur n'est pas autorisé à effectué cette requete"
+        //   );
+        //   alert("L'utilisateur n'est pas autorisé à effectué cette requete");
+        // }
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleCart = (id) => {
+    for (let i = 0; i < products.length; i++) {
+      if (products[i]._id === id) {
+        products[i].inCart = false;
+      }
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header showMenu={showMenu} setShowMenu={setShowMenu} />
+      <Social />
+      <HomeScreen showMenu={showMenu} setShowMenu={setShowMenu} />
+
+      <ProductsScreen
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+        products={products}
+        setProducts={setProducts}
+        cart={cart}
+        setCart={setCart}
+        total={total}
+        setTotal={setTotal}
+        handleCart={handleCart}
+        isLoading={isLoading}
+      />
+    </>
+
+    // <Router>
+    //   <Header showMenu={showMenu} setShowMenu={setShowMenu} />
+    //   <Switch>
+    //     <Route path="/contact">
+    //       <ContactScreen showMenu={showMenu} setShowMenu={setShowMenu} />
+    //     </Route>
+    //     <Route path="/products">
+    //       <ProductsScreen
+    //         showMenu={showMenu}
+    //         setShowMenu={setShowMenu}
+    //         products={products}
+    //         setProducts={setProducts}
+    //         cart={cart}
+    //         setCart={setCart}
+    //         total={total}
+    //         setTotal={setTotal}
+    //         handleCart={handleCart}
+    //         isLoading={isLoading}
+    //       />
+    //     </Route>
+    //     <Route path="/cart">
+    //       <CartScreen showMenu={showMenu} setShowMenu={setShowMenu} />
+    //     </Route>
+    //     <Route path="/">
+    //       <HomeScreen showMenu={showMenu} setShowMenu={setShowMenu} />
+    //     </Route>
+    //   </Switch>
+    // </Router>
   );
 }
 
