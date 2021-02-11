@@ -15,6 +15,7 @@ import Photo from "../../hero-bcg.png";
 
 import Open from "../../Components/Open";
 import Header from "../../Components/Header";
+import Social from "../../Components/Social";
 
 function HomeScreen({ showMenu, setShowMenu }) {
   let history = useHistory();
@@ -41,6 +42,7 @@ function HomeScreen({ showMenu, setShowMenu }) {
           </div>
         </BannerText>
         <HomeImage src={Photo} alt="Photo de mannequins de la marque" />
+        <Social />
         <FirstHomeElement></FirstHomeElement>
         <SecondHomeElement></SecondHomeElement>
       </Home>

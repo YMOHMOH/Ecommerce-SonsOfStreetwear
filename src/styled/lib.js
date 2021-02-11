@@ -121,7 +121,7 @@ export const Logo = styled.img`
 export const NavBar = styled.div`
   position: fixed;
   background: ${(props) => {
-    return !props.navbar ? "#fff" : "#000";
+    return !props.navbar ? "#fff" : "#111";
   }};
   /*top: 0;
   left: 0; */
@@ -433,7 +433,6 @@ export const Sci = styled.ul`
   right: 30px;
   display: flex;
   flex-direction: column;
-  z-index: 3;
 
   li {
     opacity: 0;
@@ -441,7 +440,7 @@ export const Sci = styled.ul`
     padding: 10px 0;
     text-align: center;
     animation: ${fadeInBottom} 0.5s linear forwards;
-
+    color: #000;
     &:nth-child(1) {
       animation-delay: 2s;
     }
@@ -536,6 +535,7 @@ export const Contact = styled.section`
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
+  background: #fff;
 
   @media (max-width: 991px) {
     padding: 50px;
@@ -694,9 +694,8 @@ export const ProductsWrapper = styled.section`
   top: 100vh;
   left: 0;
   width: 100%;
-  padding: 3rem 0;
-  /* background: green; */
-  background: #fff;
+  padding-top: 3rem;
+  background: radial-gradient(#0021ce, #050f44);
 
   z-index: 2;
 `;
@@ -777,3 +776,170 @@ export const Cart = styled.section`
 `;
 
 /*----- END OF CART -----*/
+
+/* --------------- NEWSLETTER ---------------- */
+
+export const NewsletterWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#0021ce, #050f44);
+  height: 50vh;
+`;
+
+export const NewsletterForm = styled.div`
+  position: relative;
+  padding: 2.5rem;
+  min-width: 37.5rem;
+  background: #0b229e;
+  box-shadow: 0 60px 50px rgba(0, 0, 0, 0.3);
+
+  h2 {
+    margin: 0 0 1.25rem;
+    padding: 0;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  input[type="submit"] {
+    background: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    margin: 10px 0 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.5s;
+    font-weight: 700;
+
+    &:hover {
+      background: linear-gradient(to right, #1db0dc, #23d0d3);
+      color: #fff;
+    }
+  }
+`;
+
+export const InputBoxNews = styled.div`
+  position: relative;
+  margin: 2.5rem 0 1.25rem;
+  width: 100%;
+
+  input {
+    position: absolute;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+    color: 1.2rem;
+    color: #fff;
+    transition: 0.5s;
+
+    &:focus,
+    &:valid {
+      border-bottom: 2px solid rgba(255, 255, 255, 1);
+
+      ~ label {
+        color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-30px);
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 10px 0;
+    display: inline-block;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+`;
+
+/* --------------- END OF NEWSLETTER ---------------- */
+
+/* --------------- FOOTER ---------------- */
+
+export const FooterWrapper = styled.footer`
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 3.1rem 6.25rem;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  p {
+    color: #999;
+  }
+`;
+
+export const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #f00;
+    }
+  }
+`;
+
+export const AboutUs = styled.div`
+  margin-right: 1.9rem;
+  width: 40%;
+`;
+
+export const SciFooter = styled.ul`
+  margin-top: 20px;
+  display: flex;
+
+  li {
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+
+    color: #fff;
+
+    &:hover {
+      background: #f00;
+    }
+  }
+`;
+
+export const QuickLinks = styled.div`
+  position: relative;
+  width: 25%;
+
+  ul {
+    li {
+      color: #999;
+      margin-bottom: 10px;
+    }
+  }
+`;
+/* --------------- END OF FOOTER ---------------- */

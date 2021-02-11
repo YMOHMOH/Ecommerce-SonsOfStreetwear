@@ -9,7 +9,6 @@ import ProductsScreen from "./Containers/ProductsScreen";
 import CartScreen from "./Containers/CartScreen";
 
 import Header from "./Components/Header";
-import Social from "./Components/Social";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -71,7 +70,6 @@ function App() {
   return (
     <>
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
-      <Social />
       <HomeScreen showMenu={showMenu} setShowMenu={setShowMenu} />
 
       <ProductsScreen
