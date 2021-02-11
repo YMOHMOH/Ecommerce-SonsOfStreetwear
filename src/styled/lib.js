@@ -790,7 +790,7 @@ export const NewsletterWrapper = styled.section`
 export const NewsletterForm = styled.div`
   position: relative;
   padding: 2.5rem;
-  min-width: 37.5rem;
+  /* min-width: 37.5rem; */
   background: #0b229e;
   box-shadow: 0 60px 50px rgba(0, 0, 0, 0.3);
 
@@ -873,6 +873,10 @@ export const FooterWrapper = styled.footer`
   justify-content: space-between;
   flex-wrap: wrap;
 
+  @media (max-width: 991px) {
+    padding: 0;
+  }
+
   p {
     color: #999;
   }
@@ -883,6 +887,10 @@ export const FooterContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
 
   h2 {
     position: relative;
