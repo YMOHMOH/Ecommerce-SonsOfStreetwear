@@ -876,9 +876,9 @@ export const FooterWrapper = styled.footer`
   justify-content: space-between;
   flex-wrap: wrap;
 
-  /* @media (max-width: 991px) {
-    padding: 2.5rem;
-  } */
+  @media (max-width: 991px) {
+    padding: 0rem;
+  }
 
   p {
     color: #999;
