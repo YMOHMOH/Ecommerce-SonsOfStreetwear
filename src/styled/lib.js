@@ -120,6 +120,7 @@ export const Logo = styled.img`
 
 export const NavBar = styled.div`
   position: fixed;
+  box-sizing: border-box;
   background: ${(props) => {
     return !props.navbar ? "#fff" : "#111";
   }};
@@ -298,6 +299,7 @@ export const Home = styled.section`
   position: fixed;
   top: 80px;
   padding: 0 100px;
+  box-sizing: border-box;
 
   background: #fff;
   /* background: green; */
@@ -536,6 +538,7 @@ export const Contact = styled.section`
   align-items: center;
   flex-direction: column;
   background: #fff;
+  box-sizing: border-box;
 
   @media (max-width: 991px) {
     padding: 50px;
@@ -698,6 +701,7 @@ export const ProductsWrapper = styled.section`
   width: 100%;
   padding-top: 3rem;
   background: radial-gradient(#0021ce, #050f44);
+  box-sizing: border-box;
 
   z-index: 2;
 `;
@@ -738,6 +742,7 @@ export const ProductWrapper = styled.section`
   margin-bottom: 2%;
   cursor: pointer;
   background: transparent;
+  box-sizing: border-box;
 
   h3 {
     text-transform: capitalize;
@@ -788,6 +793,7 @@ export const NewsletterWrapper = styled.section`
   background: radial-gradient(#0021ce, #050f44);
   /* height: 50vh; */
   height: auto;
+  box-sizing: border-box;
 `;
 
 export const NewsletterForm = styled.div`
@@ -875,6 +881,7 @@ export const FooterWrapper = styled.footer`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  box-sizing: border-box;
 
   @media (max-width: 991px) {
     padding: 0rem;
