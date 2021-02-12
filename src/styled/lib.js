@@ -868,7 +868,7 @@ export const InputBoxNews = styled.div`
 
 export const FooterWrapper = styled.footer`
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: auto;
   padding: 3.1rem 6.25rem;
   background: #111;
@@ -876,9 +876,9 @@ export const FooterWrapper = styled.footer`
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @media (max-width: 991px) {
+  /* @media (max-width: 991px) {
     padding: 2.5rem;
-  }
+  } */
 
   p {
     color: #999;
