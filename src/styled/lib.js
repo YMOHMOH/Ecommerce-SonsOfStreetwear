@@ -868,7 +868,7 @@ export const InputBoxNews = styled.div`
 
 export const FooterWrapper = styled.footer`
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: auto;
   padding: 3.1rem 6.25rem;
   background: #111;
