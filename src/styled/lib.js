@@ -1014,8 +1014,11 @@ export const CopyrightText = styled.div`
   padding: 8px 6.25rem;
   text-align: center;
   color: #999;
-  @media (max-width: 991px) {
+  /* @media (max-width: 991px) {
     padding: 8px 2.5rem;
+  } */
+  @media (max-width: 991px) {
+    padding: 0rem;
   }
 `;
 
