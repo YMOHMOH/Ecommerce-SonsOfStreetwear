@@ -591,7 +591,8 @@ export const Icon = styled.div`
   min-width: 3.75rem;
   height: 3.75rem;
   background: #fff;
-  border: 1px solid #000;
+  border: 1px solid #0b229e;
+  color: #0b229e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -609,7 +610,8 @@ export const Text = styled.div`
 
   h3 {
     font-weight: 500;
-    color: #00bcd4;
+    /* color: #00bcd4; */
+    color: #0b229e;
   }
 `;
 
@@ -784,7 +786,8 @@ export const NewsletterWrapper = styled.section`
   justify-content: center;
   align-items: center;
   background: radial-gradient(#0021ce, #050f44);
-  height: 50vh;
+  /* height: 50vh; */
+  height: auto;
 `;
 
 export const NewsletterForm = styled.div`
