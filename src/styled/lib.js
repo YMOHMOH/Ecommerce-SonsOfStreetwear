@@ -877,7 +877,7 @@ export const FooterWrapper = styled.footer`
   flex-wrap: wrap;
 
   @media (max-width: 991px) {
-    padding: 0;
+    padding: 2.5rem;
   }
 
   p {
@@ -916,6 +916,12 @@ export const FooterContainer = styled.div`
 export const AboutUs = styled.div`
   margin-right: 1.9rem;
   width: 40%;
+
+  @media (max-width: 991px) {
+    margin-right: 0rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
 `;
 
 export const SciFooter = styled.ul`
@@ -945,12 +951,72 @@ export const SciFooter = styled.ul`
 export const QuickLinks = styled.div`
   position: relative;
   width: 25%;
+  margin-right: 1.9rem;
 
+  @media (max-width: 991px) {
+    margin-right: 0rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
   ul {
     li {
       color: #999;
       margin-bottom: 10px;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+      }
     }
   }
 `;
+
+export const ContactFooter = styled.div`
+  margin-right: 1.9rem;
+  width: calc(35% - 3.8rem);
+  margin-right: 0 !important;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+`;
+
+export const InfoFooter = styled.ul`
+  position: relative;
+  li {
+    display: flex;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+    }
+    p {
+      color: #999;
+      &:hover {
+        color: #fff;
+      }
+    }
+    span {
+      color: #999;
+      &:hover {
+        color: #fff;
+      }
+      &:nth-child(1) {
+        color: #fff;
+        font-size: 1.25rem;
+        margin-right: 10px;
+      }
+    }
+  }
+`;
+
+export const CopyrightText = styled.div`
+  width: 100%;
+  background: #181818;
+  padding: 8px 6.25rem;
+  text-align: center;
+  color: #999;
+  @media (max-width: 991px) {
+    padding: 8px 2.5rem;
+  }
+`;
+
 /* --------------- END OF FOOTER ---------------- */
