@@ -1062,8 +1062,8 @@ export const InfoBarContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: 991px) {
-    width: 350px;
-    justify-content: space-between;
+    width: 440px;
+    justify-content: space-around;
   }
 `;
 
@@ -1119,6 +1119,9 @@ export const InfoBarFace = styled.div`
     box-sizing: border-box;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
     transform: translateY(-50px);
+    /* @media (max-width: 991px) {
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    } */
   }
 `;
 
