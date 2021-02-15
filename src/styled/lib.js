@@ -122,7 +122,7 @@ export const NavBar = styled.div`
   position: fixed;
   box-sizing: border-box;
   background: ${(props) => {
-    return !props.navbar ? "#fff" : "#111";
+    return !props.navbar ? "#fff" : "#333";
   }};
   /*top: 0;
   left: 0; */
@@ -653,7 +653,7 @@ export const InputBox = styled.div`
     &:focus,
     &:valid {
       ~ span {
-        color: #00bcd4;
+        color: #0b229e;
         font-size: 0.75rem;
         transform: translateY(-20px);
       }
@@ -700,7 +700,10 @@ export const ProductsWrapper = styled.section`
   left: 0;
   width: 100%;
   padding-top: 3rem;
-  background: radial-gradient(#0021ce, #050f44);
+  /* background: radial-gradient(#0021ce, #050f44); */
+  background: #333;
+  background: radial-gradient(#ee9617, #fe5858);
+
   box-sizing: border-box;
 
   z-index: 2;
@@ -790,7 +793,12 @@ export const NewsletterWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(#0021ce, #050f44);
+  /* background: radial-gradient(#0021ce, #050f44); */
+  background: #333;
+  /* background-color #ee9617;
+background-image linear-gradient(315deg, #ee9617 0%, #fe5858 74%); */
+  background: radial-gradient(#ee9617, #fe5858);
+
   /* height: 50vh; */
   height: auto;
   box-sizing: border-box;
@@ -801,6 +809,7 @@ export const NewsletterForm = styled.div`
   padding: 2.5rem;
   /* min-width: 37.5rem; */
   background: #0b229e;
+  background: #fe5858;
   box-shadow: 0 60px 50px rgba(0, 0, 0, 0.3);
 
   h2 {
@@ -877,14 +886,14 @@ export const FooterWrapper = styled.footer`
   width: 100%;
   height: auto;
   padding: 3.1rem 6.25rem;
-  background: #111;
+  background: #333;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   box-sizing: border-box;
 
   @media (max-width: 991px) {
-    padding: 0rem;
+    padding: 40px;
   }
 
   p {
@@ -946,7 +955,7 @@ export const SciFooter = styled.ul`
     margin-right: 10px;
     text-decoration: none;
     border-radius: 4px;
-
+    cursor: pointer;
     color: #fff;
 
     &:hover {
@@ -1018,8 +1027,12 @@ export const InfoFooter = styled.ul`
 export const CopyrightText = styled.div`
   width: 100%;
   background: #181818;
-  padding: 8px 6.25rem;
-  text-align: center;
+  /* padding: 8px 6.25rem; */
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
   color: #999;
   /* @media (max-width: 991px) {
     padding: 8px 2.5rem;
@@ -1030,3 +1043,106 @@ export const CopyrightText = styled.div`
 `;
 
 /* --------------- END OF FOOTER ---------------- */
+
+/* --------------- INFOBAR ---------------- */
+export const InfoBarWrapper = styled.div`
+  background: #333;
+  /* height: 75vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const InfoBarContainer = styled.div`
+  width: 700px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  @media (max-width: 991px) {
+    width: 350px;
+    justify-content: space-between;
+  }
+`;
+
+export const InfoBarContent = styled.div`
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 50px;
+  }
+
+  h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+`;
+
+export const InfoBarFace = styled.div`
+  width: 150px;
+  height: 100px;
+  transition: 0.5s;
+  &:nth-child(1) {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(50px);
+
+    ${InfoBarContent} {
+      opacity: 0.2;
+      transition: 0.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  &:nth-child(2) {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    transform: translateY(-50px);
+  }
+`;
+
+export const InfoBarCard = styled.div`
+  position: relative;
+
+  &:hover {
+    ${InfoBarFace} {
+      &:nth-child(1) {
+        transform: translateY(0);
+        background: #f00;
+        ${InfoBarContent} {
+          opacity: 1;
+        }
+      }
+      &:nth-child(2) {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  /* @media (max-width: 991px) {
+    margin-right: 50px;
+  } */
+`;
+
+/* --------------- END OF INFOBAR ---------------- */

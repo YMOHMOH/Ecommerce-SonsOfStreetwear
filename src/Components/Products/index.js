@@ -9,6 +9,7 @@ import Product from "../Product";
 import ContactScreen from "../../Containers/ContactScreen";
 import Newsletter from "../../Components/Newsletter";
 import Footer from "../../Components/Footer";
+import InfoBar from "../../Components/InfoBar";
 
 export default function Products({
   products,
@@ -43,6 +44,7 @@ export default function Products({
       </ProductsCenterWrapper>
       <ContactScreen showMenu={showMenu} setShowMenu={setShowMenu} />
       <Newsletter />
+      <InfoBar />
       <Footer />
     </ProductsWrapper>
   );

@@ -20,7 +20,7 @@ function ContactScreen({ showMenu, setShowMenu }) {
     <>
       <Contact>
         <Content>
-          <h2>Contact Us</h2>
+          <h2>Contacter nous</h2>
           <p>
             Duis feugiat mollis eros, condimentum dapibus quam pulvinar a.
             Quisque sit amet odio vitae neque porttitor imperdiet a et ex.
@@ -62,10 +62,10 @@ function ContactScreen({ showMenu, setShowMenu }) {
           </ContactInfo>
           <ContactForm>
             <form>
-              <h2>Send Message</h2>
+              <h2>Envoyer un message</h2>
               <InputBox>
                 <input type="text" name="" required="required"></input>
-                <span>Full Name</span>
+                <span>Nom complet</span>
               </InputBox>
               <InputBox>
                 <input type="text" name="" required="required"></input>
@@ -73,10 +73,10 @@ function ContactScreen({ showMenu, setShowMenu }) {
               </InputBox>
               <InputBox>
                 <textarea rows="5" required=" required"></textarea>
-                <span>Type your Message...</span>
+                <span>Entrer votre Message...</span>
               </InputBox>
               <InputBox>
-                <input type="submit" name="" value="Send"></input>
+                <input type="submit" name="" value="Envoyer"></input>
               </InputBox>
             </form>
           </ContactForm>

@@ -18,15 +18,11 @@ function Footer() {
       <FooterWrapper>
         <FooterContainer>
           <AboutUs>
-            <h2>About Us</h2>
+            <h2>Sons Of Streetwear</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              non felis ac odio posuere viverra. Integer hendrerit sollicitudin
-              sapien, ut iaculis diam scelerisque vitae. Nunc at velit ipsum.
-              Curabitur venenatis neque nec sapien porta, non sollicitudin magna
-              dictum. Vestibulum porta rutrum tortor, a tempor urna fringilla
-              sit amet. Ut ligula ante, vestibulum sed diam eget, ultricies
-              porta erat. Ut accumsan iaculis egestas. Ut vitae porta dolor.
+              La marque sons of street a été créée en 2013. Inspirée par la
+              série sons of anarchy, elle est la rencontre entre le monde des
+              bikers et le streetwear urbain d'aujourd'hui.
             </p>
             <SciFooter>
               <li>
@@ -41,50 +37,51 @@ function Footer() {
             </SciFooter>
           </AboutUs>
           <QuickLinks>
-            <h2>Quick Links</h2>
+            <h2>Informations</h2>
             <ul>
-              <li>About</li>
-              <li>FAQ</li>
-              <li>Privacy Policy</li>
-              <li>Help</li>
-              <li>Terms and Conditions</li>
-              <li>Contact</li>
+              <li>Livraison et Retour</li>
+              <li>Paiement sécurisé</li>
+              <li>Mentions légales</li>
+              <li>CGV</li>
             </ul>
           </QuickLinks>
           <ContactFooter>
-            <h2>Contact Info</h2>
+            <h2>Service Client</h2>
             <InfoFooter>
               <li>
                 <span>
                   <FontAwesomeIcon icon="map-marker" />
                 </span>
                 <span>
-                  647 Linda Street
+                  13 Rue Robert Schumann
                   <br />
-                  Phoenixville, PA 19460, <br />
-                  USA
+                  95600 Eaubonne
                 </span>
               </li>
               <li>
                 <span>
                   <FontAwesomeIcon icon="phone" />
                 </span>
-                <p>+1 234 567 8900</p>
-                <br />
-                <p>+1 234 567 8900</p>
+                <p>+336.67.49.86.94</p>
               </li>
               <li>
                 <span>
                   <FontAwesomeIcon icon="envelope" />
                 </span>
-                <p>test@gmail.com</p>
+                <p>sonsofstreetwear@gmail.com</p>
+              </li>
+              <li>
+                <span>
+                  <FontAwesomeIcon icon="envelope" />
+                </span>
+                <p>Contact en ligne</p>
               </li>
             </InfoFooter>
           </ContactFooter>
         </FooterContainer>
       </FooterWrapper>
       <CopyrightText>
-        <p>Copyright @ 2021 Younes MOHMOH. All Rights Reserved.</p>
+        <p>Copyright © 2013 - 2021 Sons Of Streetwear</p>
       </CopyrightText>
     </>
   );
