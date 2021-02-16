@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function ContactScreen({ showMenu, setShowMenu }) {
   return (
     <>
-      <Contact>
+      <Contact id="contact">
         <Content>
           <h2>Contacter nous</h2>
           <p>

@@ -22,7 +22,7 @@ export default function Products({
   setShowMenu,
 }) {
   return (
-    <ProductsWrapper>
+    <ProductsWrapper id="products">
       {/* <ProductsTitle>
         <h2>Nos produits</h2>
       </ProductsTitle> */}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Logo, NavBar, Bars, Times, CartItem, Panier } from "../../styled/lib";
-
+import { Link, animateScroll as scroll } from "react-scroll";
 import Img from "../../sons-of-street.jpg";
 
 function Header({ showMenu, setShowMenu }) {
@@ -25,7 +25,7 @@ function Header({ showMenu, setShowMenu }) {
         src={Img}
         alt="sons of street logo"
         onClick={() => {
-          history.push(`/`);
+          scroll.scrollToTop();
         }}
       />
       <Bars
@@ -39,27 +39,40 @@ function Header({ showMenu, setShowMenu }) {
       <ul>
         <li
           onClick={() => {
-            history.push(`/products`);
             if (showMenu) {
               setShowMenu(false);
             }
           }}
         >
-          Produits
+          <Link
+            activeClass="active"
+            to="products"
+            smooth={true}
+            offset={-80}
+            duration={1000}
+          >
+            Produits
+          </Link>
         </li>
         <li
           onClick={() => {
-            history.push(`/contact`);
             if (showMenu) {
               setShowMenu(false);
             }
           }}
         >
-          Contact
+          <Link
+            activeClass="active"
+            to="contact"
+            smooth={true}
+            offset={-80}
+            duration={1000}
+          >
+            Contact
+          </Link>
         </li>
         <Panier
           onClick={() => {
-            history.push(`/cart`);
             if (showMenu) {
               setShowMenu(false);
             }
