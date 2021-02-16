@@ -46,6 +46,7 @@ function HomeScreen({ showMenu, setShowMenu }) {
               smooth={true}
               offset={-80}
               duration={1000}
+              delay={500}
             >
               JE COMMANDE
             </Link>
