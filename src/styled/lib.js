@@ -332,10 +332,7 @@ export const Home = styled.section`
   @media (max-width: 1280px) {
     /* height: auto !important; */
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 100px;
-    box-sizing: border-box;
   }
 
   @media (max-width: 991px) {
@@ -500,10 +497,6 @@ export const BannerText = styled.div`
         left: 0.35rem;
       }
     }
-
-    /* @media (max-width: 991px) {
-      display: none;
-    } */
   }
 
   @media (max-width: 1280px) {
@@ -512,7 +505,7 @@ export const BannerText = styled.div`
     left: 0;
     margin-top: 100px;
     transform: translateY(0); */
-    transform: translateY(0%);
+    transform: translateY(25%);
 
     max-width: 700px;
     flex: 1;
@@ -627,6 +620,9 @@ export const SecondHomeElement = styled.div`
   border: 2px solid #000;
   animation: ${rotate} 30s linear infinite, ${fadeIn} 1s linear forwards;
   animation-delay: 4s;
+  @media (max-width: 1280px) {
+    top: 15%;
+  }
 `;
 
 /*----- END OF HOME ELEMENT -----*/
