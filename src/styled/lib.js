@@ -153,7 +153,7 @@ export const NavBar = styled.div`
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 3;
   transition: all 0.5s ease-out;
 
   ul {
