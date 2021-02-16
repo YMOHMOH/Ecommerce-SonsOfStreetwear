@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../App.css";
-
+import { Link, animateScroll as scroll } from "react-scroll";
 import { useHistory } from "react-router-dom";
 
 import {
@@ -40,7 +40,20 @@ function HomeScreen({ showMenu, setShowMenu }) {
           //   history.push(`/products`);
           // }}
           >
-            JE COMMANDE
+            <Link
+              activeClass="active"
+              to="products"
+              smooth={true}
+              offset={-80}
+              duration={1000}
+              onClick={() => {
+                if (showMenu) {
+                  setShowMenu(false);
+                }
+              }}
+            >
+              JE COMMANDE
+            </Link>
           </div>
         </BannerText>
         <HomeImage src={Photo} alt="Photo de mannequins de la marque" />
