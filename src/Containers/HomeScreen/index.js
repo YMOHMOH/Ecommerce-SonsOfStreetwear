@@ -25,7 +25,9 @@ function HomeScreen({ showMenu, setShowMenu }) {
       {/* <Open /> */}
       <Home>
         <BannerText>
-          <h2>Comme nous</h2>
+          <h2>
+            SONS OF STREET<span style={{ color: "#f76208" }}>WEAR</span>
+          </h2>
           <br />
           <h3>adoptez la culture urbaine</h3>
           <p>

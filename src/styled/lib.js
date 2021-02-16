@@ -360,6 +360,7 @@ export const BannerText = styled.div`
     transform-origin: left;
     text-transform: uppercase;
     transform: scaleX(0);
+
     animation: ${revealTextReverse} 1s ease-in-out forwards;
 
     &:before {
@@ -377,24 +378,22 @@ export const BannerText = styled.div`
   }
 
   h2 {
-    font-size: 6em;
+    font-size: 4em;
     animation-delay: 0s;
-    @media (max-width: 1280px) {
-      margin-bottom: 0.5rem;
-    }
+    font-weight: 700;
+    margin-bottom: 0.5rem;
     @media (max-width: 991px) {
       font-size: 3em;
     }
   }
 
   h3 {
-    font-size: 3em;
+    font-size: 2em;
     animation-delay: 1s;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
     &:before {
       animation-delay: 2s;
-    }
-    @media (max-width: 1280px) {
-      margin-bottom: 0.5rem;
     }
     @media (max-width: 991px) {
       font-size: 1.5em;
@@ -1160,6 +1159,7 @@ export const InfoBarContainer = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   overflow: hidden;
+  margin-top: 20px;
 
   @media (max-width: 991px) {
     width: 440px;
