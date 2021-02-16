@@ -69,6 +69,24 @@ export const rotate = keyframes`
     }
 `;
 
+export const topAnimation = keyframes`
+  from {
+    transform: translate(0rem, 0);
+  }
+  to {
+    transform: translate(0rem, 3.5rem);
+  }
+`;
+
+export const bottomAnimation = keyframes`
+  from {
+    transform: translate(-11.5rem, 0);
+  }
+  to {
+    transform: translate(0rem, 0);
+  }
+`;
+
 /*----- END OF KEYFRAMES -----*/
 
 /*----- OPEN -----*/
@@ -314,6 +332,8 @@ export const Home = styled.section`
   @media (max-width: 1280px) {
     /* height: auto !important; */
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 100px;
     box-sizing: border-box;
   }
@@ -390,15 +410,16 @@ export const BannerText = styled.div`
     font-size: 1.2em;
     animation: ${fadeIn} 1s linear forwards;
     animation-delay: 2s;
+    margin-bottom: 1rem;
   }
 
   div {
-    opacity: 0;
+    /* opacity: 0;
     display: inline-block;
     margin: 20px 0 0;
     padding: 10px 20px;
-    background: #000;
-    background: linear-gradient(to right, #1db0dc, #23d0d3);
+    background: #c2510b;
+    background: #f76208;
     color: #fff;
     font-weight: 700;
     font-size: 1.2em;
@@ -406,9 +427,83 @@ export const BannerText = styled.div`
     animation: ${fadeInBottom} 0.5s linear forwards;
     animation-delay: 2.5s;
     cursor: pointer;
-    @media (max-width: 991px) {
-      display: none;
+    border: none;
+    border-radius: 5px; */
+    opacity: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+    //display: block;
+    position: relative;
+    letter-spacing: 0.15em;
+    padding: 20px;
+    background: transparent;
+    outline: none;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+    animation: ${fadeInBottom} 0.5s linear forwards;
+    animation-delay: 2.5s;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    &::after,
+    &::before {
+      border: 0;
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: -2;
+      border-radius: 50%;
+      //animation: grow 1s infinite;
     }
+
+    &::before {
+      border: 0;
+      background-color: #c2510b;
+      top: -0.75rem;
+      left: 0.5rem;
+      animation: ${topAnimation} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s
+        infinite alternate;
+    }
+    &::after {
+      background-color: #f76208;
+      top: 3rem;
+      left: 13rem;
+      animation: ${bottomAnimation} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+        0.5s infinite alternate;
+    }
+
+    &:hover {
+      color: white;
+      &::before,
+      &::after {
+        top: 0;
+        //transform: skewx(-10deg);
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        animation: none;
+      }
+      &::after {
+        left: 0rem;
+      }
+      &::before {
+        top: 0.5rem;
+        left: 0.35rem;
+      }
+    }
+
+    /* @media (max-width: 991px) {
+      display: none;
+    } */
   }
 
   @media (max-width: 1280px) {
@@ -488,7 +583,15 @@ export const HomeImage = styled.img`
   animation: ${fadeIn} 1s linear forwards;
   animation-delay: 3s;
   /* z-index: 100; */
- c
+  @media (max-width: 1280px) {
+    animation: none;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 /*----- END OF HOME IMAGE -----*/
@@ -507,7 +610,10 @@ export const FirstHomeElement = styled.div`
   animation-delay: 4s;
 
   @media (max-width: 1280px) {
-    display: none;
+    width: 125px;
+    height: 125px;
+    border: 20px solid #000;
+    bottom: -75px;
   }
 `;
 
@@ -594,8 +700,8 @@ export const Icon = styled.div`
   min-width: 3.75rem;
   height: 3.75rem;
   background: #fff;
-  border: 1px solid #0b229e;
-  color: #0b229e;
+  border: 1px solid #f76208;
+  color: #f76208;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -614,7 +720,7 @@ export const Text = styled.div`
   h3 {
     font-weight: 500;
     /* color: #00bcd4; */
-    color: #0b229e;
+    color: #f76208;
   }
 `;
 
@@ -653,7 +759,7 @@ export const InputBox = styled.div`
     &:focus,
     &:valid {
       ~ span {
-        color: #0b229e;
+        color: #f76208;
         font-size: 0.75rem;
         transform: translateY(-20px);
       }
@@ -673,8 +779,7 @@ export const InputBox = styled.div`
 
   input[type="submit"] {
     width: 6.25rem;
-    background: #00bcd4;
-    background: linear-gradient(to right, #1db0dc, #23d0d3);
+    background: #f76208;
 
     color: #fff;
     border: none;
@@ -701,9 +806,8 @@ export const ProductsWrapper = styled.section`
   width: 100%;
   padding-top: 3rem;
   /* background: radial-gradient(#0021ce, #050f44); */
-  background: #333;
-  background: radial-gradient(#ee9617, #fe5858);
-
+  /* background: radial-gradient(#ee9617, #fe5858); */
+  background: #fff;
   box-sizing: border-box;
 
   z-index: 2;
@@ -800,7 +904,7 @@ background-image linear-gradient(315deg, #ee9617 0%, #fe5858 74%); */
   background: radial-gradient(#ee9617, #fe5858);
 
   /* height: 50vh; */
-  height: auto;
+  height: 25rem;
   box-sizing: border-box;
 `;
 
@@ -1127,7 +1231,6 @@ export const InfoBarFace = styled.div`
 
 export const InfoBarCard = styled.div`
   position: relative;
-
   &:hover {
     ${InfoBarFace} {
       &:nth-child(1) {

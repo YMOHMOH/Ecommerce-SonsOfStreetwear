@@ -34,11 +34,11 @@ function HomeScreen({ showMenu, setShowMenu }) {
             le streetwear urbain d'aujourd'hui.
           </p>
           <div
-            onClick={() => {
-              history.push(`/products`);
-            }}
+          // onClick={() => {
+          //   history.push(`/products`);
+          // }}
           >
-            Acheter maintenant
+            JE COMMANDE
           </div>
         </BannerText>
         <HomeImage src={Photo} alt="Photo de mannequins de la marque" />
