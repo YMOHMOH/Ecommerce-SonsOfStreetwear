@@ -447,6 +447,7 @@ export const BannerText = styled.div`
     animation-delay: 2.5s;
     cursor: pointer;
     margin-bottom: 1rem;
+    color: #f00;
 
     &::after,
     &::before {

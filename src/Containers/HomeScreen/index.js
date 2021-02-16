@@ -46,11 +46,6 @@ function HomeScreen({ showMenu, setShowMenu }) {
               smooth={true}
               offset={-80}
               duration={1000}
-              onClick={() => {
-                if (showMenu) {
-                  setShowMenu(false);
-                }
-              }}
             >
               JE COMMANDE
             </Link>
