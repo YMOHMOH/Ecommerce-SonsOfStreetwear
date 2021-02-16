@@ -153,7 +153,7 @@ export const NavBar = styled.div`
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  z-index: 3;
+  z-index: 2;
   transition: all 0.5s ease-out;
 
   ul {
@@ -350,6 +350,7 @@ export const BannerText = styled.div`
   left: 10%; */
   transform: translateY(-50%);
   max-width: 700px;
+  z-index: 1;
 
   h2,
   h3 {
@@ -575,6 +576,7 @@ export const HomeImage = styled.img`
   object-position: top;
   animation: ${fadeIn} 1s linear forwards;
   animation-delay: 3s;
+  z-index: 0;
   /* z-index: 100; */
   @media (max-width: 1280px) {
     animation: none;
