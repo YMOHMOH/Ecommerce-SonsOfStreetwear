@@ -174,15 +174,15 @@ export const NavBar = styled.div`
       animation: ${fadeInRight} 0.5s linear forwards;
       cursor: pointer;
       color: ${(props) => {
-        return !props.navbar ? "#000" : "#fff";
+        return !props.showMenu && props.navbar ? "#fff" : "#000";
       }};
 
       span {
         border-color: ${(props) => {
-          return !props.navbar ? "#000" : "#fff";
+          return !props.showMenu && props.navbar ? "#fff" : "#000";
         }};
         color: ${(props) => {
-          return !props.navbar ? "#000" : "#fff";
+          return !props.showMenu && props.navbar ? "#fff" : "#000";
         }};
       }
 
@@ -915,6 +915,14 @@ export const NewsletterForm = styled.div`
     margin: 0 0 1.25rem;
     padding: 0;
     font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  h3 {
+    margin: 0 0 1.25rem;
+    padding: 0;
+    font-size: 1.5rem;
     color: #fff;
   }
 

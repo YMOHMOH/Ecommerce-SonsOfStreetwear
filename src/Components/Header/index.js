@@ -37,36 +37,34 @@ function Header({ showMenu, setShowMenu }) {
         <i class="fa fa-bars x2"></i>
       </Bars>
       <ul>
-        <li
-          onClick={() => {
-            if (showMenu) {
-              setShowMenu(false);
-            }
-          }}
-        >
+        <li>
           <Link
             activeClass="active"
             to="products"
             smooth={true}
             offset={-80}
             duration={1000}
+            onClick={() => {
+              if (showMenu) {
+                setShowMenu(false);
+              }
+            }}
           >
             Produits
           </Link>
         </li>
-        <li
-          onClick={() => {
-            if (showMenu) {
-              setShowMenu(false);
-            }
-          }}
-        >
+        <li>
           <Link
             activeClass="active"
             to="contact"
             smooth={true}
             offset={-80}
             duration={1000}
+            onClick={() => {
+              if (showMenu) {
+                setShowMenu(false);
+              }
+            }}
           >
             Contact
           </Link>
