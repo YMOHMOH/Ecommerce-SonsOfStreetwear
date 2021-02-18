@@ -15,41 +15,73 @@ export default function Product({
   setCart,
   total,
   setTotal,
+  setProductDetails,
+  setDetailsInfos,
 }) {
   let history = useHistory();
 
   const handleStock = () => {
-    let stock = "En stock :";
+    // let stock = "En stock :";
+    // if (products[index].stock["XS"] > 0) {
+    //   stock += " XS";
+    // }
+    // if (products[index].stock["S"] > 0) {
+    //   stock += " S";
+    // }
+    // if (products[index].stock["M"] > 0) {
+    //   stock += " M";
+    // }
+    // if (products[index].stock["L"] > 0) {
+    //   stock += " L";
+    // }
+    // if (products[index].stock["XL"] > 0) {
+    //   stock += " XL";
+    // }
+    // if (products[index].stock["XXL"] > 0) {
+    //   stock += " XXL";
+    // }
+    // if (products[index].stock["unique_size"] > 0) {
+    //   stock += " Taille unique";
+    // }
+    // if (stock === "En stock :") {
+    //   stock += " Aucune taille disponible";
+    // }
+
+    let stock = ["En stock :"];
     if (products[index].stock["XS"] > 0) {
-      stock += " XS";
+      stock.push(" XS");
     }
     if (products[index].stock["S"] > 0) {
-      stock += " S";
+      stock.push(" S");
     }
     if (products[index].stock["M"] > 0) {
-      stock += " M";
+      stock.push(" M");
     }
     if (products[index].stock["L"] > 0) {
-      stock += " L";
+      stock.push(" L");
     }
     if (products[index].stock["XL"] > 0) {
-      stock += " XL";
+      stock.push(" XL");
     }
     if (products[index].stock["XXL"] > 0) {
-      stock += " XXL";
+      stock.push(" XXL");
     }
     if (products[index].stock["unique_size"] > 0) {
-      stock += " Taille unique";
+      stock.push(" Taille unique");
     }
     if (stock === "En stock :") {
-      stock += " Aucune taille disponible";
+      stock.push(" Aucune taille disponible");
     }
-
     return stock;
   };
 
   return (
-    <Card>
+    <Card
+      onClick={() => {
+        setDetailsInfos(products[index]);
+        setProductDetails(true);
+      }}
+    >
       <Box>
         <Content>
           <ProductImageWrapper>

@@ -7,6 +7,7 @@ import HomeScreen from "./Containers/HomeScreen";
 import ContactScreen from "./Containers/ContactScreen";
 import ProductsScreen from "./Containers/ProductsScreen";
 import CartScreen from "./Containers/CartScreen";
+import ProductDetails from "./Components/ProductDetails";
 
 import Header from "./Components/Header";
 
@@ -15,15 +16,21 @@ import {
   faMapMarker,
   faPhone,
   faEnvelope,
+  faWindowClose,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faMapMarker, faPhone, faEnvelope);
+library.add(faMapMarker, faPhone, faEnvelope, faWindowClose);
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
+  const [detailsInfos, setDetailsInfos] = useState(null);
+
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+
+  const [productDetails, setProductDetails] = useState(false);
+  const [cartModal, setCartModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,8 +46,8 @@ function App() {
           newProducts[i] = obj;
         }
         setProducts(newProducts);
+        setDetailsInfos(newProducts[0]);
         setIsLoading(false);
-        console.log(newProducts);
       } catch (error) {
         console.log(error);
         // if (error.response.data.error === "User doesn't exist") {
@@ -69,7 +76,11 @@ function App() {
 
   return (
     <>
-      <Header showMenu={showMenu} setShowMenu={setShowMenu} />
+      <Header
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+        setProductDetails={setProductDetails}
+      />
       <HomeScreen showMenu={showMenu} setShowMenu={setShowMenu} />
 
       <ProductsScreen
@@ -83,7 +94,18 @@ function App() {
         setTotal={setTotal}
         handleCart={handleCart}
         isLoading={isLoading}
+        setProductDetails={setProductDetails}
+        setDetailsInfos={setDetailsInfos}
       />
+      {detailsInfos ? (
+        <ProductDetails
+          productDetails={productDetails}
+          setProductDetails={setProductDetails}
+          detailsInfos={detailsInfos}
+        />
+      ) : (
+        <></>
+      )}
     </>
 
     // <Router>

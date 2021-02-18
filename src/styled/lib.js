@@ -1258,3 +1258,176 @@ export const InfoBarCard = styled.div`
 `;
 
 /* --------------- END OF INFOBAR ---------------- */
+
+/* --------------- MODAL ---------------- */
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0, 0, 0, 0.8);
+  z-index: 5;
+  visibility: ${(props) => {
+    return !props.modalOpen ? "hidden" : "visible";
+  }};
+`;
+
+export const ModalWrapper = styled.div`
+  position: relative;
+  height: 90%;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    &:first-child {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 991px) {
+    padding: 0.5rem;
+  }
+`;
+
+export const CloseCart = styled.span`
+  font-size: 1.7rem;
+  cursor: pointer;
+`;
+
+/* --------------- END OF MODAL ---------------- */
+
+/* --------------- PRODUCT DETAILS ---------------- */
+
+export const Details = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  box-shadow: 0 0 5px #ccc;
+`;
+
+export const BigImg = styled.div`
+  max-width: 500px;
+  /* min-width: 290px; */
+  overflow: hidden;
+  margin: 25px;
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    display: block;
+    object-fit: contain;
+    /* object-position: top; */
+
+    @media (max-width: 991px) {
+      height: 300px;
+    }
+  }
+`;
+
+export const DetailsBox = styled.div`
+  max-width: 500px;
+  min-width: 290px;
+  margin: 25px;
+
+  p {
+    line-height: 1.5;
+    margin: 15px 0;
+  }
+`;
+
+export const DetailsRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  span {
+    color: #f00;
+  }
+`;
+export const DetailsSize = styled.div`
+  display: flex;
+`;
+
+export const Size = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  opacity: ${(props) => {
+    return props.isActive ? "0.7" : "1";
+  }};
+  border: ${(props) => {
+    return props.isActive ? "1px solid #f00" : "1px solid #333";
+  }};
+  color: ${(props) => {
+    return props.isActive ? "#fff" : "#333";
+  }};
+  background: ${(props) => {
+    return props.isActive ? "#f76208" : "transparent";
+  }};
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+`;
+
+export const DetailsThumb = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  cursor: pointer;
+  margin: 10px 0;
+  outline: none;
+  @media (max-width: 991px) {
+    height: 50px;
+  }
+`;
+
+export const ThumbImage = styled.img`
+  width: 90px;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border: ${(props) => {
+    return props.isActive ? "1px solid #f76208" : "1px solid #ddd";
+  }};
+  margin-right: 5px;
+  opacity: ${(props) => {
+    return props.isActive ? "1" : "0.7";
+  }};
+  border-radius: 5px;
+  @media (max-width: 991px) {
+    width: 50px;
+  }
+`;
+
+export const DetailsButton = styled.button`
+  background: #f76208;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  margin-top: 15px;
+`;
+
+/* --------------- END OF PRODUCT DETAILS ---------------- */

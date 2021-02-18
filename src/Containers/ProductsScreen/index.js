@@ -14,6 +14,8 @@ function ProductsScreen({
   setTotal,
   handleCart,
   isLoading,
+  setProductDetails,
+  setDetailsInfos,
 }) {
   return (
     <>
@@ -29,6 +31,8 @@ function ProductsScreen({
           setTotal={setTotal}
           showMenu={showMenu}
           setShowMenu={setShowMenu}
+          setProductDetails={setProductDetails}
+          setDetailsInfos={setDetailsInfos}
         />
       )}
     </>

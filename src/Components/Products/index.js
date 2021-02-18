@@ -20,6 +20,8 @@ export default function Products({
   setTotal,
   showMenu,
   setShowMenu,
+  setProductDetails,
+  setDetailsInfos,
 }) {
   return (
     <ProductsWrapper id="products">
@@ -38,6 +40,8 @@ export default function Products({
               setCart={setCart}
               total={total}
               setTotal={setTotal}
+              setProductDetails={setProductDetails}
+              setDetailsInfos={setDetailsInfos}
             />
           );
         })}
