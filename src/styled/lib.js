@@ -1350,17 +1350,20 @@ export const DetailsBox = styled.div`
 export const DetailsRow = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  &:nth-child(1) {
+    margin-bottom: 15px;
 
-  h2 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
 
-  span {
-    color: #f00;
+    span {
+      font-weight: 700;
+      color: #f00;
+    }
   }
 `;
 export const DetailsSize = styled.div`
@@ -1431,3 +1434,80 @@ export const DetailsButton = styled.button`
 `;
 
 /* --------------- END OF PRODUCT DETAILS ---------------- */
+
+export const Minus = styled.div`
+  width: 15px;
+  height: 15px;
+  background-color: #f76208;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #f76208;
+  padding: 0.5rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: rgb(231, 226, 221);
+  opacity: ${(props) => {
+    return props.disable ? "0.2" : "1";
+  }};
+  &:hover {
+    background-color: ${(props) => {
+      return !props.disable && "transparent";
+    }};
+    color: ${(props) => {
+      return !props.disable && "#f76208";
+    }};
+    cursor: ${(props) => {
+      return !props.disable && "pointer";
+    }};
+  }
+`;
+
+export const NumberItem = styled.div`
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #f76208;
+  padding: 0.5rem;
+  color: #333;
+`;
+
+export const Plus = styled.div`
+  width: 15px;
+  height: 15px;
+  background-color: #f76208;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #f76208;
+  padding: 0.5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: rgb(231, 226, 221);
+  opacity: ${(props) => {
+    return props.disable ? "0.2" : "1";
+  }};
+  &:hover {
+    background-color: ${(props) => {
+      return !props.disable && "transparent";
+    }};
+    color: ${(props) => {
+      return !props.disable && "#f76208";
+    }};
+    cursor: ${(props) => {
+      return !props.disable && "pointer";
+    }};
+  }
+`;
+
+export const ItemAmount = styled.p`
+  text-align: center;
+  font-size: 1rem;
+`;
+
+export const Quantity = styled.div`
+  display: flex;
+`;

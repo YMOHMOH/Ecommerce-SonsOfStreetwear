@@ -17,8 +17,10 @@ import {
   faPhone,
   faEnvelope,
   faWindowClose,
+  faMinus,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faMapMarker, faPhone, faEnvelope, faWindowClose);
+library.add(faMapMarker, faPhone, faEnvelope, faWindowClose, faMinus, faPlus);
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -39,14 +41,13 @@ function App() {
           `https://api-sonsofstreetwear.herokuapp.com/v1/products/`
         );
         const newProducts = [...response.data.products];
-        const newProductsLength = response.data.products.length;
+        const newProductsLength = newProducts.length;
         for (let i = 0; i < newProductsLength; i++) {
-          const obj = { ...newProducts[i] };
-          obj.inCart = false;
-          newProducts[i] = obj;
+          newProducts[i].quantity = 1;
         }
+        console.log(newProducts);
         setProducts(newProducts);
-        setDetailsInfos(newProducts[0]);
+        setDetailsInfos(response.data.products[0]);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -80,6 +81,7 @@ function App() {
         showMenu={showMenu}
         setShowMenu={setShowMenu}
         setProductDetails={setProductDetails}
+        nbCartItem={cart.length}
       />
       <HomeScreen showMenu={showMenu} setShowMenu={setShowMenu} />
 
@@ -102,6 +104,9 @@ function App() {
           productDetails={productDetails}
           setProductDetails={setProductDetails}
           detailsInfos={detailsInfos}
+          setDetailsInfos={setDetailsInfos}
+          cart={cart}
+          setCart={setCart}
         />
       ) : (
         <></>

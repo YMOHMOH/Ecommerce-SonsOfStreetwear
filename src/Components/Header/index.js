@@ -4,7 +4,7 @@ import { Logo, NavBar, Bars, Times, CartItem, Panier } from "../../styled/lib";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Img from "../../sons-of-street.jpg";
 
-function Header({ showMenu, setShowMenu, setProductDetails }) {
+function Header({ showMenu, setShowMenu, setProductDetails, nbCartItem }) {
   const [navbar, setNavbar] = useState(false);
 
   let history = useHistory();
@@ -78,7 +78,7 @@ function Header({ showMenu, setShowMenu, setProductDetails }) {
           }}
         >
           Panier
-          <CartItem>{0}</CartItem>
+          <CartItem>{nbCartItem}</CartItem>
         </Panier>
         <Times
           onClick={() => {
