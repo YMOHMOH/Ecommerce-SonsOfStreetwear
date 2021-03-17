@@ -79,10 +79,10 @@ export default function Product({
 
   return (
     <Card
-      onClick={() => {
-        setDetailsInfos(products[index]);
-        setProductDetails(true);
-      }}
+    // onClick={() => {
+    //   setDetailsInfos(products[index]);
+    //   setProductDetails(true);
+    // }}
     >
       <Box>
         <Content>
