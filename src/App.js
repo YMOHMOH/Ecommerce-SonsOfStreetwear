@@ -31,7 +31,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [detailsInfos, setDetailsInfos] = useState(null);
-  const [email, setEmail] = useState("test@gmail.com");
+  const [email, setEmail] = useState("");
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
 
