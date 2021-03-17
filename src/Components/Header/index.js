@@ -50,7 +50,7 @@ function Header({ showMenu, setShowMenu, setProductDetails, nbCartItem }) {
               }
             }}
           >
-            Gallerie
+            Galerie
           </Link>
         </li>
         {/* <li>

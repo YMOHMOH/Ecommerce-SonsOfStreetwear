@@ -72,7 +72,7 @@ function HomeScreen({
               duration={1000}
               delay={500}
             >
-              GALLERIE
+              GALERIE
             </Link>
           </div>
         </BannerText>
