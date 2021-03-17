@@ -177,6 +177,7 @@ export const NavBar = styled.div`
         return !props.showMenu && props.navbar ? "#fff" : "#000";
       }};
 
+      a,
       span {
         border-color: ${(props) => {
           return !props.showMenu && props.navbar ? "#fff" : "#000";
@@ -193,6 +194,8 @@ export const NavBar = styled.div`
         color: ${(props) => {
           return !props.navbar ? "#fff" : "#000";
         }};
+
+        a,
         span {
           border-color: ${(props) => {
             return !props.navbar ? "#fff" : "#000";
@@ -326,6 +329,7 @@ export const Home = styled.section`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0rem 0rem 0rem 10rem;
   overflow-y: hidden;
 
@@ -875,14 +879,26 @@ export const ProductImageWrapper = styled.section`
   overflow: hidden;
 `;
 
+export const Rate = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 1rem;
+    color: #f76208;
+    margin: 0.1rem;
+
+    &:last-child {
+      color: #404040;
+    }
+  }
+`;
+
 /*----- CART -----*/
 
-export const Cart = styled.section`
-  position: absolute;
-  width: 100%;
-  min-height: calc(100vh - 80px);
-  top: 80px;
-  left: 0;
+export const CartWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
   background: green;
 `;
 
@@ -991,6 +1007,7 @@ export const InputBoxNews = styled.div`
 /* --------------- FOOTER ---------------- */
 
 export const FooterWrapper = styled.footer`
+  display: block;
   position: relative;
   width: 100%;
   height: auto;
@@ -1050,6 +1067,7 @@ export const AboutUs = styled.div`
 `;
 
 export const SciFooter = styled.ul`
+  list-style: none;
   margin-top: 20px;
   display: flex;
 
@@ -1084,6 +1102,7 @@ export const QuickLinks = styled.div`
     width: 100%;
   }
   ul {
+    list-style: none;
     li {
       color: #999;
       margin-bottom: 10px;
@@ -1105,6 +1124,7 @@ export const ContactFooter = styled.div`
 `;
 
 export const InfoFooter = styled.ul`
+  list-style: none;
   position: relative;
   li {
     display: flex;
@@ -1155,6 +1175,17 @@ export const CopyrightText = styled.div`
 
 /* --------------- INFOBAR ---------------- */
 export const InfoBarWrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+  ul {
+    list-style: none;
+  }
+
   background: #333;
   /* height: 75vh; */
   display: flex;

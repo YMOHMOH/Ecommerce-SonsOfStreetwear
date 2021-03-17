@@ -22,6 +22,8 @@ export default function Products({
   setShowMenu,
   setProductDetails,
   setDetailsInfos,
+  email,
+  setEmail,
 }) {
   return (
     <ProductsWrapper id="products">
@@ -46,9 +48,9 @@ export default function Products({
           );
         })}
       </ProductsCenterWrapper>
-      <ContactScreen showMenu={showMenu} setShowMenu={setShowMenu} />
-      <Newsletter />
-      <InfoBar />
+      {/* <ContactScreen showMenu={showMenu} setShowMenu={setShowMenu} /> */}
+      <Newsletter email={email} setEmail={setEmail} />
+      {/* <InfoBar /> */}
       <Footer />
     </ProductsWrapper>
   );

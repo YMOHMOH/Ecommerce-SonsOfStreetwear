@@ -34,7 +34,7 @@ function Header({ showMenu, setShowMenu, setProductDetails, nbCartItem }) {
           setShowMenu(true);
         }}
       >
-        <i class="fa fa-bars x2"></i>
+        <i className="fa fa-bars x2"></i>
       </Bars>
       <ul>
         <li>
@@ -50,10 +50,10 @@ function Header({ showMenu, setShowMenu, setProductDetails, nbCartItem }) {
               }
             }}
           >
-            Produits
+            Gallerie
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             activeClass="active"
             to="contact"
@@ -67,25 +67,33 @@ function Header({ showMenu, setShowMenu, setProductDetails, nbCartItem }) {
             }}
           >
             Contact
-          </Link>
-        </li>
-        <Panier
+          </Link> 
+        </li>*/}
+        <li
           onClick={() => {
-            setProductDetails(true);
+            // setProductDetails(true);
             if (showMenu) {
               setShowMenu(false);
             }
           }}
         >
-          Panier
-          <CartItem>{nbCartItem}</CartItem>
-        </Panier>
+          <a
+            href="http://www.streetplace.fr/"
+            target="_blank"
+            style={{ textDecoration: "none" }}
+          >
+            Boutique
+          </a>
+
+          {/* Panier
+          <CartItem>{nbCartItem}</CartItem> */}
+        </li>
         <Times
           onClick={() => {
             setShowMenu(false);
           }}
         >
-          <i class="fa fa-times x2"></i>
+          <i className="fa fa-times x2"></i>
         </Times>
       </ul>
     </NavBar>

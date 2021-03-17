@@ -16,12 +16,36 @@ import Photo from "../../hero-bcg.png";
 import Open from "../../Components/Open";
 import Header from "../../Components/Header";
 import Social from "../../Components/Social";
+import ProductDetails from "../../Components/ProductDetails";
+import Products from "../../Components/Products";
 
-function HomeScreen({ showMenu, setShowMenu }) {
+function HomeScreen({
+  showMenu,
+  setShowMenu,
+  products,
+  setProducts,
+  cart,
+  setCart,
+  total,
+  setTotal,
+  setProductDetails,
+  setDetailsInfos,
+  productDetails,
+  detailsInfos,
+  isLoading,
+  email,
+  setEmail,
+}) {
   let history = useHistory();
 
   return (
     <>
+      <Header
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+        setProductDetails={setProductDetails}
+        nbCartItem={cart.length}
+      />
       {/* <Open /> */}
       <Home>
         <BannerText>
@@ -48,15 +72,45 @@ function HomeScreen({ showMenu, setShowMenu }) {
               duration={1000}
               delay={500}
             >
-              JE COMMANDE
+              GALLERIE
             </Link>
           </div>
         </BannerText>
         <HomeImage src={Photo} alt="Photo de mannequins de la marque" />
-        <Social />
+        {/* <Social /> */}
         <FirstHomeElement></FirstHomeElement>
         <SecondHomeElement></SecondHomeElement>
       </Home>
+      {isLoading ? (
+        <div>is loading ...</div>
+      ) : (
+        <Products
+          products={products}
+          setProducts={setProducts}
+          cart={cart}
+          setCart={setCart}
+          total={total}
+          setTotal={setTotal}
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
+          setProductDetails={setProductDetails}
+          setDetailsInfos={setDetailsInfos}
+          email={email}
+          setEmail={setEmail}
+        />
+      )}
+      {detailsInfos ? (
+        <ProductDetails
+          productDetails={productDetails}
+          setProductDetails={setProductDetails}
+          detailsInfos={detailsInfos}
+          setDetailsInfos={setDetailsInfos}
+          cart={cart}
+          setCart={setCart}
+        />
+      ) : (
+        <></>
+      )}
     </>
   );
 }

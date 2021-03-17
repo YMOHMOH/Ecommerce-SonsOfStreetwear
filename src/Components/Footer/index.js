@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Footer() {
   return (
     <>
-      <FooterWrapper>
+      {/* <FooterWrapper>
         <FooterContainer>
           <AboutUs>
             <h2>Sons Of Streetwear</h2>
@@ -26,13 +26,13 @@ function Footer() {
             </p>
             <SciFooter>
               <li>
-                <i class="fa fa-instagram"></i>
+                <i className="fa fa-instagram"></i>
               </li>
               <li>
-                <i class="fa fa-snapchat"></i>
+                <i className="fa fa-snapchat"></i>
               </li>
               <li>
-                <i class="fa fa-facebook"></i>
+                <i className="fa fa-facebook"></i>
               </li>
             </SciFooter>
           </AboutUs>
@@ -79,7 +79,7 @@ function Footer() {
             </InfoFooter>
           </ContactFooter>
         </FooterContainer>
-      </FooterWrapper>
+      </FooterWrapper> */}
       <CopyrightText>
         <p>Copyright © 2013 - 2021 Sons Of Streetwear</p>
       </CopyrightText>

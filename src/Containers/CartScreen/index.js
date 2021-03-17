@@ -1,12 +1,12 @@
 import React from "react";
 import "../../App.css";
 
-import { Cart } from "../../styled/lib";
+import { CartWrapper } from "../../styled/lib";
 
 function CartScreen({ showMenu, setShowMenu }) {
   return (
     <>
-      <Cart>This is the CartScreen component</Cart>
+      <CartWrapper>This is the CartScreen component</CartWrapper>
     </>
   );
 }

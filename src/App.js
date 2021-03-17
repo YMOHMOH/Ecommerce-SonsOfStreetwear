@@ -4,12 +4,7 @@ import axios from "axios";
 import "./App.css";
 
 import HomeScreen from "./Containers/HomeScreen";
-import ContactScreen from "./Containers/ContactScreen";
-import ProductsScreen from "./Containers/ProductsScreen";
 import CartScreen from "./Containers/CartScreen";
-import ProductDetails from "./Components/ProductDetails";
-
-import Header from "./Components/Header";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -19,20 +14,28 @@ import {
   faWindowClose,
   faMinus,
   faPlus,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faMapMarker, faPhone, faEnvelope, faWindowClose, faMinus, faPlus);
+library.add(
+  faMapMarker,
+  faPhone,
+  faEnvelope,
+  faWindowClose,
+  faMinus,
+  faPlus,
+  faStar
+);
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [detailsInfos, setDetailsInfos] = useState(null);
-
+  const [email, setEmail] = useState("test@gmail.com");
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
 
   const [productDetails, setProductDetails] = useState(false);
-  const [cartModal, setCartModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -76,71 +79,56 @@ function App() {
   };
 
   return (
-    <>
-      <Header
-        showMenu={showMenu}
-        setShowMenu={setShowMenu}
-        setProductDetails={setProductDetails}
-        nbCartItem={cart.length}
-      />
-      <HomeScreen showMenu={showMenu} setShowMenu={setShowMenu} />
-
-      <ProductsScreen
-        showMenu={showMenu}
-        setShowMenu={setShowMenu}
-        products={products}
-        setProducts={setProducts}
-        cart={cart}
-        setCart={setCart}
-        total={total}
-        setTotal={setTotal}
-        handleCart={handleCart}
-        isLoading={isLoading}
-        setProductDetails={setProductDetails}
-        setDetailsInfos={setDetailsInfos}
-      />
-      {detailsInfos ? (
-        <ProductDetails
-          productDetails={productDetails}
-          setProductDetails={setProductDetails}
-          detailsInfos={detailsInfos}
-          setDetailsInfos={setDetailsInfos}
-          cart={cart}
-          setCart={setCart}
-        />
-      ) : (
-        <></>
-      )}
-    </>
-
-    // <Router>
-    //   <Header showMenu={showMenu} setShowMenu={setShowMenu} />
-    //   <Switch>
-    //     <Route path="/contact">
-    //       <ContactScreen showMenu={showMenu} setShowMenu={setShowMenu} />
-    //     </Route>
-    //     <Route path="/products">
-    //       <ProductsScreen
-    //         showMenu={showMenu}
-    //         setShowMenu={setShowMenu}
-    //         products={products}
-    //         setProducts={setProducts}
-    //         cart={cart}
-    //         setCart={setCart}
-    //         total={total}
-    //         setTotal={setTotal}
-    //         handleCart={handleCart}
-    //         isLoading={isLoading}
-    //       />
-    //     </Route>
-    //     <Route path="/cart">
-    //       <CartScreen showMenu={showMenu} setShowMenu={setShowMenu} />
-    //     </Route>
-    //     <Route path="/">
-    //       <HomeScreen showMenu={showMenu} setShowMenu={setShowMenu} />
-    //     </Route>
-    //   </Switch>
-    // </Router>
+    <Router>
+      <Switch>
+        {/* <Route path="/contact">
+          <ContactScreen showMenu={showMenu} setShowMenu={setShowMenu} />
+        </Route>
+        <Route path="/products">
+          <ProductsScreen
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+            products={products}
+            setProducts={setProducts}
+            cart={cart}
+            setCart={setCart}
+            total={total}
+            setTotal={setTotal}
+            handleCart={handleCart}
+            isLoading={isLoading}
+          />
+        </Route> */}
+        {/* <Route path="/cart">
+          <CartScreen showMenu={showMenu} setShowMenu={setShowMenu} />
+        </Route> */}
+        <Route path="/" exact>
+          <HomeScreen
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+            products={products}
+            setProducts={setProducts}
+            cart={cart}
+            setCart={setCart}
+            total={total}
+            setTotal={setTotal}
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+            setProductDetails={setProductDetails}
+            setDetailsInfos={setDetailsInfos}
+            productDetails={productDetails}
+            setProductDetails={setProductDetails}
+            detailsInfos={detailsInfos}
+            setDetailsInfos={setDetailsInfos}
+            cart={cart}
+            setCart={setCart}
+            Ò
+            isLoading={isLoading}
+            email={email}
+            setEmail={setEmail}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

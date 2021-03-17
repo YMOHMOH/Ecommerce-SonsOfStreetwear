@@ -20,6 +20,8 @@ import {
 } from "../../styled/lib.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import Rating from "../Rating";
+
 export default function ProductDetails({
   productDetails,
   setProductDetails,
@@ -229,13 +231,16 @@ export default function ProductDetails({
                       );
                     })}
                   </DetailsThumb>
-
+                  <Rating
+                    rating={detailsInfos.rating}
+                    numReviews={detailsInfos.numReviews}
+                  />
                   <DetailsButton
                     onClick={() =>
                       addToCart(detailsInfos._id, stock[indexSize].trim())
                     }
                   >
-                    Add to cart
+                    Ajouter au panier
                   </DetailsButton>
                 </DetailsBox>
               </Details>

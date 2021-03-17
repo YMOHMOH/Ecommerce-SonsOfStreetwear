@@ -7,6 +7,8 @@ import {
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+import Rating from "../Rating";
+
 export default function Product({
   products,
   setProducts,
@@ -20,60 +22,60 @@ export default function Product({
 }) {
   let history = useHistory();
 
-  const handleStock = () => {
-    // let stock = "En stock :";
-    // if (products[index].stock["XS"] > 0) {
-    //   stock += " XS";
-    // }
-    // if (products[index].stock["S"] > 0) {
-    //   stock += " S";
-    // }
-    // if (products[index].stock["M"] > 0) {
-    //   stock += " M";
-    // }
-    // if (products[index].stock["L"] > 0) {
-    //   stock += " L";
-    // }
-    // if (products[index].stock["XL"] > 0) {
-    //   stock += " XL";
-    // }
-    // if (products[index].stock["XXL"] > 0) {
-    //   stock += " XXL";
-    // }
-    // if (products[index].stock["unique_size"] > 0) {
-    //   stock += " Taille unique";
-    // }
-    // if (stock === "En stock :") {
-    //   stock += " Aucune taille disponible";
-    // }
+  // const handleStock = () => {
+  //   // let stock = "En stock :";
+  //   // if (products[index].stock["XS"] > 0) {
+  //   //   stock += " XS";
+  //   // }
+  //   // if (products[index].stock["S"] > 0) {
+  //   //   stock += " S";
+  //   // }
+  //   // if (products[index].stock["M"] > 0) {
+  //   //   stock += " M";
+  //   // }
+  //   // if (products[index].stock["L"] > 0) {
+  //   //   stock += " L";
+  //   // }
+  //   // if (products[index].stock["XL"] > 0) {
+  //   //   stock += " XL";
+  //   // }
+  //   // if (products[index].stock["XXL"] > 0) {
+  //   //   stock += " XXL";
+  //   // }
+  //   // if (products[index].stock["unique_size"] > 0) {
+  //   //   stock += " Taille unique";
+  //   // }
+  //   // if (stock === "En stock :") {
+  //   //   stock += " Aucune taille disponible";
+  //   // }
 
-    let stock = ["En stock :"];
-    if (products[index].stock["XS"] > 0) {
-      stock.push(" XS");
-    }
-    if (products[index].stock["S"] > 0) {
-      stock.push(" S");
-    }
-    if (products[index].stock["M"] > 0) {
-      stock.push(" M");
-    }
-    if (products[index].stock["L"] > 0) {
-      stock.push(" L");
-    }
-    if (products[index].stock["XL"] > 0) {
-      stock.push(" XL");
-    }
-    if (products[index].stock["XXL"] > 0) {
-      stock.push(" XXL");
-    }
-    if (products[index].stock["unique_size"] > 0) {
-      stock.push(" Taille unique");
-    }
-    if (stock === "En stock :") {
-      stock.push(" Aucune taille disponible");
-    }
-    return stock;
-  };
+  //   let stock = ["En stock :"];
+  //   if (products[index].stock["XS"] > 0) {
+  //     stock.push(" XS");
+  //   }
+  //   if (products[index].stock["S"] > 0) {
+  //     stock.push(" S");
+  //   }
+  //   if (products[index].stock["M"] > 0) {
+  //     stock.push(" M");
+  //   }
+  //   if (products[index].stock["L"] > 0) {
+  //     stock.push(" L");
+  //   }
+  //   if (products[index].stock["XL"] > 0) {
+  //     stock.push(" XL");
+  //   }
+  //   if (products[index].stock["XXL"] > 0) {
+  //     stock.push(" XXL");
+  //   }
+  //   if (products[index].stock["unique_size"] > 0) {
+  //     stock.push(" Taille unique");
+  //   }
+  //   if (stock === "En stock :") {
+  //     stock.push(" Aucune taille disponible");
+  //   }
+  //   return stock;
+  // };
 
   return (
     <Card
@@ -87,7 +89,7 @@ export default function Product({
           <ProductImageWrapper>
             <ProductImage background={products[index].pictures[0].secure_url} />
           </ProductImageWrapper>
-          <h3>{products[index].title} </h3>
+          {/*<h3>{products[index].title} </h3>
           <h4>
             <pre>
               {products[index].price}€{"   "}
@@ -102,8 +104,13 @@ export default function Product({
               </span>
             </pre>
           </h4>
+
           <h5>{handleStock()}</h5>
-          {/* <h2>01</h2>
+          <Rating
+            rating={products[index].rating}
+            numReviews={products[index].numReviews}
+          />
+           <h2>01</h2>
           <h3>Card One</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
