@@ -78,7 +78,7 @@ function Header({ showMenu, setShowMenu, setProductDetails, nbCartItem }) {
           }}
         >
           <a
-            href="http://www.streetplace.fr/"
+            href="https://www.streetplace.fr/"
             target="_blank"
             style={{ textDecoration: "none" }}
           >
