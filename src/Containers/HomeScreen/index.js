@@ -56,7 +56,7 @@ function HomeScreen({
           <h3>adoptez la culture urbaine</h3>
           <p>
             La marque sons of street a été créée en 2013. Inspirée par la série
-            sons of anarchy, elle est la rencontre du monde du biker et du
+            Sons of Anarchy, elle est la rencontre du monde du biker et du
             streetwear urbain d'aujourd'hui.
           </p>
           <div
