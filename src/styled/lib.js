@@ -134,6 +134,10 @@ export const Logo = styled.img`
   opacity: 0;
   animation: ${fadeIn} 0.5s linear forwards;
   animation-delay: 2s;
+
+  @media (max-width: 991px) {
+    height: 30px;
+  }
 `;
 
 export const NavBar = styled.div`
@@ -848,7 +852,6 @@ export const ProductImage = styled.div`
 export const ProductWrapper = styled.section`
   width: 260px;
   margin-bottom: 2%;
-  cursor: pointer;
   background: transparent;
   box-sizing: border-box;
 

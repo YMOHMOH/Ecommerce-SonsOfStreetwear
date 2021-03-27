@@ -149,7 +149,6 @@ const Card = styled.div`
     5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   margin: 30px;
-  cursor: pointer;
 `;
 
 const Box = styled.div`
@@ -169,7 +168,6 @@ const Box = styled.div`
 const Content = styled.div`
   width: 260px;
   margin-bottom: 2%;
-  cursor: pointer;
   background: transparent;
 
   h3 {

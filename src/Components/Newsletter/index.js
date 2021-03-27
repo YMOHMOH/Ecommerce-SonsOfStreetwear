@@ -28,7 +28,7 @@ function Newsletter({ email, setEmail }) {
       //   { email: email }
       // );
       console.log(data.success);
-      alert.success("Le mail a envoyé avec succès");
+      alert.success("Nous avons bien enregistré votre email");
     } catch (error) {
       console.log(error.response.data.error);
       alert.error(
