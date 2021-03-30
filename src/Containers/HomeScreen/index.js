@@ -70,7 +70,7 @@ function HomeScreen({
               smooth={true}
               offset={-80}
               duration={1000}
-              delay={500}
+              delay={100}
             >
               GALERIE
             </Link>
