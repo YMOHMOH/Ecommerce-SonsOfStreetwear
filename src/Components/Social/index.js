@@ -7,7 +7,13 @@ function Social() {
   return (
     <Sci>
       <li>
-        <i className="fa fa-instagram"></i>
+        <a
+          href="http://instagram.com/sonsofstreetwear"
+          target="_blank"
+          style={{ textDecoration: "none" }}
+        >
+          <i className="fa fa-instagram"></i>
+        </a>
       </li>
       <li>
         <i className="fa fa-snapchat"></i>
