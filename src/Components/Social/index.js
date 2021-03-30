@@ -10,7 +10,7 @@ function Social() {
         <a
           href="http://instagram.com/sonsofstreetwear"
           target="_blank"
-          style={{ textDecoration: "none" }}
+          style={{ textDecoration: "none", cursor: "pointer" }}
         >
           <i className="fa fa-instagram"></i>
         </a>
