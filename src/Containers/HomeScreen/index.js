@@ -77,7 +77,7 @@ function HomeScreen({
           </div>
         </BannerText>
         <HomeImage src={Photo} alt="Photo de mannequins de la marque" />
-        {/* <Social /> */}
+        <Social />
         <FirstHomeElement></FirstHomeElement>
         <SecondHomeElement></SecondHomeElement>
       </Home>
