@@ -16,10 +16,22 @@ function Social() {
         </a>
       </li>
       <li>
-        <i className="fa fa-snapchat"></i>
+        <a
+          href="https://facebook.com/sonsofstreetshop"
+          target="_blank"
+          style={{ textDecoration: "none", cursor: "pointer" }}
+        >
+          <i className="fa fa-facebook"></i>
+        </a>
       </li>
       <li>
-        <i className="fa fa-facebook"></i>
+        <a
+          href="https://www.snapchat.com/add/sosstreetwear"
+          target="_blank"
+          style={{ textDecoration: "none", cursor: "pointer" }}
+        >
+          <i className="fa fa-snapchat"></i>
+        </a>
       </li>
     </Sci>
   );
