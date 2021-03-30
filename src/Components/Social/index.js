@@ -8,7 +8,7 @@ function Social() {
     <Sci>
       <li>
         <a
-          href="http://instagram.com/sonsofstreetwear"
+          href="https://instagram.com/sonsofstreetwear"
           target="_blank"
           style={{ textDecoration: "none", cursor: "pointer" }}
         >
