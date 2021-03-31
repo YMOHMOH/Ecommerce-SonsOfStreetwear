@@ -48,7 +48,6 @@ function App() {
         for (let i = 0; i < newProductsLength; i++) {
           newProducts[i].quantity = 1;
         }
-        console.log(newProducts);
         setProducts(newProducts);
         setDetailsInfos(response.data.products[0]);
         setIsLoading(false);
